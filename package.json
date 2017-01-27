@@ -26,5 +26,8 @@
   "bugs": {
     "url": "https://github.com/Vualto/vuplay-dashjs/issues"
   },
-  "homepage": "https://github.com/Vualto/vuplay-dashjs#readme"
+  "homepage": "https://github.com/Vualto/vuplay-dashjs#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1"
+  }
 }
