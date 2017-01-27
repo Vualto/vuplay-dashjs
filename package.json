@@ -1,0 +1,30 @@
+{
+  "name": "vuplay-dashjs",
+  "version": "0.1.0",
+  "description": "a demo repo on how to use vudrm with dashjs",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vualto/vuplay-dashjs.git"
+  },
+  "keywords": [
+    "vuplay",
+    "vudrm",
+    "dash.js",
+    "dashjs",
+    "vualto",
+    "widevine",
+    "playready",
+    "mpedg-dash",
+    "dash"
+  ],
+  "author": "Robert Mitchell <robert.mitchell@vualto.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vualto/vuplay-dashjs/issues"
+  },
+  "homepage": "https://github.com/Vualto/vuplay-dashjs#readme"
+}
