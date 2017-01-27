@@ -29,6 +29,7 @@
   "homepage": "https://github.com/Vualto/vuplay-dashjs#readme",
   "devDependencies": {
     "grunt": "^1.0.1",
-    "grunt-contrib-clean": "^1.0.0"
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-copy": "^1.0.0"
   }
 }
