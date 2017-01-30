@@ -7,6 +7,8 @@
 
     // Initialize dashjs.
     var player = dashjs.MediaPlayer().create();
+    player.extend("KeySystemWidevine", OverrideKeySystemWidevine, true);
+    player.extend("ProtectionKeyController", OverrideProtectionKeyController, true);
     player.initialize();
     player.attachView(document.querySelector("#vuplay-video"));
     player.attachVideoContainer(document.querySelector("#vuplay-container"));
@@ -21,6 +23,7 @@
     player.setProtectionData({
         "com.widevine.alpha": {
             "serverURL": widevineLaUrl,
+            "vudrmToken": vudrmToken,
             "httpRequestHeaders": {}
         },
         "com.microsoft.playready": {
@@ -28,8 +31,6 @@
             "httpRequestHeaders": {}
         }
     });
-
-    player.extend("KeySystemWidevine", OverrideKeySystemWidevine, true);
 
     // Set the player's source.
     player.attachSource(url);

@@ -25,7 +25,11 @@ module.exports = function (grunt) {
         concat: {
             options: {},
             dist: {
-                src: ["src/OverrideKeySystemWidevine.js", "src/vuplay.js"],
+                src: [
+                    "src/OverrideKeySystemWidevine.js", 
+                    "src/OverrideProtectionKeyController.js",
+                    "src/vuplay.js"
+                ],
                 dest: "dist/vuplay.js",
             },
         },
