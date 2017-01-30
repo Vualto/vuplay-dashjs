@@ -12,9 +12,9 @@ module.exports = function(grunt) {
 
         clean: ["<%= dist %>/*"],
         copy: {
-            other: {
+            all: {
                 expand: true,
-                src: ["index.html", "poster.png"],
+                src: ["index.html", "poster.png", "src/vuplay.js"],
                 dest: "<%= dist %>/",
                 flatten: true
             }
