@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
     var dashjsUrls = {
         release: {
             min: "http://cdn.dashjs.org/latest/dash.all.min.js",
@@ -14,10 +14,17 @@ module.exports = function(grunt) {
         copy: {
             all: {
                 expand: true,
-                src: ["index.html", "poster.png", "src/vuplay.js"],
+                src: ["index.html", "poster.png"],
                 dest: "<%= dist %>/",
                 flatten: true
             }
+        },
+        concat: {
+            options: {},
+            dist: {
+                src: ["src/OverrideKeySystemWidevine.js", "src/vuplay.js"],
+                dest: "dist/vuplay.js",
+            },
         },
         "string-replace": {
             dist: {
@@ -53,9 +60,10 @@ module.exports = function(grunt) {
 
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-copy");
+    grunt.loadNpmTasks("grunt-contrib-concat");
     grunt.loadNpmTasks("grunt-string-replace");
     grunt.loadNpmTasks("grunt-contrib-connect");
 
-    grunt.registerTask("build", ["clean", "copy", "string-replace"]);
+    grunt.registerTask("build", ["clean", "copy", "concat", "string-replace"]);
     grunt.registerTask("serve", ["build", "connect"]);
 };

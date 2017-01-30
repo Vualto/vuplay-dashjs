@@ -15,7 +15,7 @@
     // For PlayReady the vudrm token is attached as a querystring parameter on the license server url.
     var playReadyLaUrl = "https://playready-license.drm.technology/rightsmanager.asmx?token=" + encodeURIComponent(vudrmToken);
     // For widevine TBC.
-    var widevineLaUrl = "https://widevine.proxy.drm.technology/proxy";
+    var widevineLaUrl = "https://widevine-proxy.drm.technology/proxy";
 
     // Set the protection data. dashjs only supports PlayReady and Widevine but Vualto do support!
     player.setProtectionData({
@@ -28,6 +28,8 @@
             "httpRequestHeaders": {}
         }
     });
+
+    player.extend("KeySystemWidevine", OverrideKeySystemWidevine, true);
 
     // Set the player's source.
     player.attachSource(url);
