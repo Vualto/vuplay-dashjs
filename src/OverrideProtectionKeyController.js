@@ -2,14 +2,14 @@ OverrideProtectionKeyController = function () {
     var parent = this.parent;
 
     return {
-        getSupportedKeySystemsFromContentProtection: function(cps) {
+        getSupportedKeySystemsFromContentProtection: function (cps) {
             var cp, ks, ksIdx, cpIdx;
             var supportedKS = [];
             var keySystems = parent.getKeySystems();
             var cpsWithKeyId = cps.find(function (element) {
                 return element.KID !== null;
             });
-            
+
             if (cps) {
                 for (ksIdx = 0; ksIdx < keySystems.length; ++ksIdx) {
                     ks = keySystems[ksIdx];

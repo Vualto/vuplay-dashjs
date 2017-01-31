@@ -3,7 +3,7 @@
     var url = "https://d1chyo78gdexn4.cloudfront.net/vualto-demo/vamps/vamps.ism/manifest.mpd";
     
     // Please login to https://admin.drm.technology to generate a vudrm token.
-    var vudrmToken = "vualto-demo|2017-01-30T15:15:34Z|RAQrLiTYv+Z8U9LrxO0JDw==|dd36a579bf0cb9dca035bc3058e5015048136b63";
+    var vudrmToken = "vualto-demo|2017-01-31T17:02:41Z|RAQrLiTYv+Z8U9LrxO0JDw==|1a7c3a4edb10d56003a5ae1df2ecce244b5fc2de";
 
     // Initialize dashjs.
     var player = dashjs.MediaPlayer().create();
@@ -16,14 +16,14 @@
     
     // For PlayReady the vudrm token is attached as a querystring parameter on the license server url.
     var playReadyLaUrl = "https://playready-license.drm.technology/rightsmanager.asmx?token=" + encodeURIComponent(vudrmToken);
-    // For widevine TBC.
+    // For widevine set the LaUrl and the vudrm token.
     var widevineLaUrl = "https://widevine-proxy.drm.technology/proxy";
+    OverrideKeySystemWidevine.VUDRM_TOKEN = vudrmToken;
 
     // Set the protection data. dashjs only supports PlayReady and Widevine but Vualto do support!
     player.setProtectionData({
         "com.widevine.alpha": {
             "serverURL": widevineLaUrl,
-            "vudrmToken": vudrmToken,
             "httpRequestHeaders": {}
         },
         "com.microsoft.playready": {
