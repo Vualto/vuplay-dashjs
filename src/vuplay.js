@@ -1,9 +1,9 @@
 (function () {
     // Set your mpeg-DASH url here.
-    var url = "https://d1chyo78gdexn4.cloudfront.net/vualto-demo/vamps/vamps.ism/manifest.mpd";
+    var url = "<your-stream-url>";
     
     // Please login to https://admin.drm.technology to generate a vudrm token.
-    var vudrmToken = "vualto-demo|2017-01-31T17:02:41Z|RAQrLiTYv+Z8U9LrxO0JDw==|1a7c3a4edb10d56003a5ae1df2ecce244b5fc2de";
+    var vudrmToken = "<your-vudrm-token>";
 
     // Initialize dashjs.
     var player = dashjs.MediaPlayer().create();
