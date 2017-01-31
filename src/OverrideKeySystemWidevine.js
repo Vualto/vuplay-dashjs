@@ -1,7 +1,6 @@
 OverrideKeySystemWidevine = function () {
     var context = this.context;
     var parent = this.parent;
-    var keyId = null;
 
     return {
         getInitData: function (cpData, kid) {
