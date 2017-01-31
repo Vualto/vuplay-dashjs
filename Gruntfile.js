@@ -26,6 +26,7 @@ module.exports = function (grunt) {
             options: {},
             dist: {
                 src: [
+                    "externs/BASE64.js",
                     "src/OverrideKeySystemWidevine.js", 
                     "src/OverrideProtectionKeyController.js",
                     "src/vuplay.js"
