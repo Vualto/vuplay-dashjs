@@ -1,6 +1,6 @@
 {
   "name": "vuplay-dashjs",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "a demo repo on how to use vudrm with dashjs",
   "main": "index.html",
   "scripts": {
@@ -22,7 +22,7 @@
     "dash"
   ],
   "author": "Robert Mitchell <robert.mitchell@vualto.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Vualto/vuplay-dashjs/issues"
   },
