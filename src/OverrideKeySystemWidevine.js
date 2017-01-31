@@ -22,5 +22,4 @@ OverrideKeySystemWidevine = function () {
 
 //VUALTO need a better way of setting this! 
 //At the moment we are limited by this: https://github.com/Dash-Industry-Forum/dash.js/issues/1162
-//
 OverrideKeySystemWidevine.VUDRM_TOKEN = null;
