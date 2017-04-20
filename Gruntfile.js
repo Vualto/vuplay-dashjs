@@ -67,7 +67,7 @@ module.exports = function (grunt) {
         connect: {
             server: {
                 options: {
-                    protocol: "http",
+                    protocol: "https",
                     hostname: "dashjs.vuplay.local.drm.technology",
                     port: 14703,
                     base: "dist",

@@ -25,10 +25,9 @@ This repo is currently targeted at [version 2.4.0](https://github.com/Dash-Indus
 4. Run `grunt build` in the project's root. This will create a `dist` folder that contains all the files need to run this demo.
 5. Run `grunt serve`, this will run the build task from the previous step and start a development node.js server. This server is not suitable for production.
     - You will need to add the host `dashjs.vuplay.local.drm.technology` to your local machine's hosts file in order for this to work.
-6. Load a supported browser and go to `http://dashjs.vuplay.local.drm.technology:14703`
+6. Load a supported browser and go to `https://dashjs.vuplay.local.drm.technology:14703`
      
-    
-NB: Adding the argument `--debug` to `grunt build` or `grunt serve` will load the debug version of dash.js and use the unminified version of the custom code.
+NB: In order to allow DRM encrypted playback in chrome (https://goo.gl/EEhZqT), SSL has been enabled for the demo. You will get a warning about an invalid cert `NET::ERR_CERT_AUTHORITY_INVALID` but this can safely be ignored.
 
 ### Browser support
 
