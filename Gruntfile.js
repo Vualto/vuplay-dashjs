@@ -1,7 +1,7 @@
 module.exports = function (grunt) {
     var dashjsUrls = {
-        min: "https://cdnjs.cloudflare.com/ajax/libs/dashjs/2.4.0/dash.all.min.js",
-        debug: "https://cdnjs.cloudflare.com/ajax/libs/dashjs/2.4.0/dash.all.debug.js"
+        min: "https://cdnjs.cloudflare.com/ajax/libs/dashjs/2.4.1/dash.all.min.js",
+        debug: "https://cdnjs.cloudflare.com/ajax/libs/dashjs/2.4.1/dash.all.debug.js"
     };
 
     var vuplayUrls = {
