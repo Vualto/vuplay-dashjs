@@ -1,4 +1,4 @@
-OverrideKeySystemWidevine = function () {
+function OverrideKeySystemWidevine() {
     return {
         getInitData: function (cpData, kid) {
             this.kid = kid;
@@ -9,7 +9,7 @@ OverrideKeySystemWidevine = function () {
         },
 
         getLicenseRequestFromMessage: function (message) {
-            body = {
+            var body = {
                 'token': OverrideKeySystemWidevine.VUDRM_TOKEN,
                 'drm_info': Array.apply(null, new Uint8Array(message)),
                 'kid': this.kid
