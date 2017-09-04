@@ -1,4 +1,4 @@
-OverrideProtectionKeyController = function () {
+function OverrideProtectionKeyController() {
     var parent = this.parent;
 
     return {
@@ -19,7 +19,7 @@ OverrideProtectionKeyController = function () {
 
                             // Look for DRM-specific ContentProtection
                             var initData = ks.getInitData(cp, cpsWithKeyId.KID);
-                            if (!!initData) {
+                            if (initData) {
                                 supportedKS.push({
                                     ks: keySystems[ksIdx],
                                     initData: initData
