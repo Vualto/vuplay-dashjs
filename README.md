@@ -5,7 +5,7 @@
 This repo will demonstrate how to use [vudrm](http://vudrm.vualto.com/) with the [dash.js](https://github.com/Dash-Industry-Forum/dash.js/wiki).
 If you have any questions please contact support@vualto.com
 
-This repo is currently targeted at [version 2.4.1](https://github.com/Dash-Industry-Forum/dash.js/releases/tag/v2.4.1) of dash.js.
+This repo is currently targeted at [version 2.6.0](https://github.com/Dash-Industry-Forum/dash.js/releases/tag/v2.6.0) of dash.js.
 
 ## Instructions
 
