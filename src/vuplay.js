@@ -18,7 +18,7 @@
     
             getLicenseRequestFromMessage: function (message) {
                 var body = {
-                    'token': self.vudrmToken,
+                    'token': vudrmToken,
                     'drm_info': Array.apply(null, new Uint8Array(message)),
                     'kid': this.kid
                 };
