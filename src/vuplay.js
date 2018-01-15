@@ -70,6 +70,7 @@
     player.extend("ProtectionKeyController", overrideProtectionKeyController, true);
     player.initialize();
     player.attachView(document.querySelector("#vuplay-video"));
+    player.attachTTMLRenderingDiv(document.querySelector("#ttml-rendering-div"));
     player.attachVideoContainer(document.querySelector("#vuplay-container"));
     player.setAutoPlay(true);
     
