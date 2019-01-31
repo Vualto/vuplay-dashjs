@@ -40,7 +40,7 @@ For a complete breakdown of supported media extensions please contact support@vu
 
 - [Contact vualto](http://www.vualto.com/contact-us/)
 - [vudrm](http://vudrm.vualto.com/)
-- [vudrm token documentation](http://readme.drm.technology/vudrm/VuDrmTokenIntegration/)
+- [vudrm token documentation](https://docs.vualto.com/projects/vudrm/en/latest/VUDRM-token.html)
 
 ### mpeg-DASH
 
