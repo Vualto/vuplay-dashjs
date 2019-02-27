@@ -1,8 +1,8 @@
 {
     "name": "vuplay-dashjs",
     "version": "1.0.0",
-    "description": "a demo repo on how to use vudrm with dashjs",
-    "main": "index.html",
+    "description": "A basic implementation of the DashJS player with the option to integrate VuDRM",
+    "main": "vuplay-dashjs.js",
     "scripts": {
         "build": "grunt build && grunt serve",
         "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,scss,md,html}\"",
@@ -13,15 +13,14 @@
         "url": "git+https://github.com/Vualto/vuplay-dashjs.git"
     },
     "keywords": [
+        "vualto",
         "vuplay",
         "vudrm",
-        "dash.js",
         "dashjs",
-        "vualto",
+        "mpeg-dash",
+        "dash",
         "widevine",
-        "playready",
-        "mpedg-dash",
-        "dash"
+        "playready"
     ],
     "contributors": [
         {
