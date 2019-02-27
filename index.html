@@ -12,12 +12,15 @@
         <div id="vuplay-container">
             <video
                 id="vuplay-video"
-                poster="poster.png"
+                poster="vuplay_poster.png"
                 controls="controls"
             ></video>
             <div id="ttml-rendering-div"></div>
         </div>
-        <script type="text/javascript" src="{dashjs}"></script>
-        <script type="text/javascript" src="{vuplayjs}"></script>
+        <script
+            type="text/javascript"
+            src="https://cdn.dashjs.org/latest/dash.all.min.js"
+        ></script>
+        <script type="text/javascript" src="vuplay-dashjs.js"></script>
     </body>
 </html>
