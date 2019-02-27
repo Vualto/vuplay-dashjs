@@ -1,7 +1,7 @@
 (function() {
+    var container = document.querySelector("#vuplay-container");
     // Set your mpeg-DASH url here.
-    var url = "<your-stream-url>";
-
+    var streamURL = "<your-stream-url>";
     // Please login to https://admin.drm.technology to generate a vudrm token.
     var vudrmToken = "<your-vudrm-token>";
 
@@ -81,7 +81,7 @@
     player.attachTTMLRenderingDiv(
         document.querySelector("#ttml-rendering-div"),
     );
-    player.attachVideoContainer(document.querySelector("#vuplay-container"));
+    player.attachVideoContainer(container);
     player.setAutoPlay(true);
 
     // For PlayReady the vudrm token is attached as a querystring parameter on the license server url.
@@ -104,5 +104,5 @@
     });
 
     // Set the player's source.
-    player.attachSource(url);
+    player.attachSource(streamURL);
 })();
