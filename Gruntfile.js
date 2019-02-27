@@ -1,12 +1,12 @@
-module.exports = function (grunt) {
+module.exports = function(grunt) {
     var dashjsUrls = {
         min: "https://cdn.dashjs.org/latest/dash.all.min.js",
-        debug: "https://cdn.dashjs.org/latest/dash.all.debug.js"
+        debug: "https://cdn.dashjs.org/latest/dash.all.debug.js",
     };
 
     var vuplayUrls = {
         min: "vuplay.min.js",
-        debug: "vuplay.js"
+        debug: "vuplay.js",
     };
 
     grunt.initConfig({
@@ -19,17 +19,17 @@ module.exports = function (grunt) {
                 expand: true,
                 src: ["index.html", "poster.png"],
                 dest: "<%= dist %>/",
-                flatten: true
-            }
+                flatten: true,
+            },
         },
         concat: {
             options: {},
             dist: {
                 src: [
                     "externs/BASE64.js",
-                    "src/OverrideKeySystemWidevine.js", 
+                    "src/OverrideKeySystemWidevine.js",
                     "src/OverrideProtectionKeyController.js",
-                    "src/vuplay.js"
+                    "src/vuplay.js",
                 ],
                 dest: "dist/vuplay.js",
             },
@@ -37,31 +37,35 @@ module.exports = function (grunt) {
         uglify: {
             js: {
                 files: {
-                    "dist/vuplay.min.js": ['dist/vuplay.js']
-                }
-            }
+                    "dist/vuplay.min.js": ["dist/vuplay.js"],
+                },
+            },
         },
         "string-replace": {
             dist: {
                 files: [
                     {
                         src: "dist/index.html",
-                        dest: "dist/index.html"
-                    }
+                        dest: "dist/index.html",
+                    },
                 ],
                 options: {
                     replacements: [
                         {
                             pattern: "{dashjs}",
-                            replacement: grunt.option("debug") ? dashjsUrls.debug : dashjsUrls.min
+                            replacement: grunt.option("debug")
+                                ? dashjsUrls.debug
+                                : dashjsUrls.min,
                         },
                         {
                             pattern: "{vuplayjs}",
-                            replacement: grunt.option("debug") ? vuplayUrls.debug : vuplayUrls.min
-                        }
-                    ]
-                }
-            }
+                            replacement: grunt.option("debug")
+                                ? vuplayUrls.debug
+                                : vuplayUrls.min,
+                        },
+                    ],
+                },
+            },
         },
 
         connect: {
@@ -71,19 +75,25 @@ module.exports = function (grunt) {
                     hostname: "dashjs.vuplay.local.drm.technology",
                     port: 14703,
                     base: "dist",
-                    keepalive: true
-                }
-            }
-        }
+                    keepalive: true,
+                },
+            },
+        },
     });
 
     grunt.loadNpmTasks("grunt-contrib-clean");
     grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-concat");
-    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks("grunt-contrib-uglify");
     grunt.loadNpmTasks("grunt-string-replace");
     grunt.loadNpmTasks("grunt-contrib-connect");
 
-    grunt.registerTask("build", ["clean", "copy", "concat", "uglify", "string-replace"]);
+    grunt.registerTask("build", [
+        "clean",
+        "copy",
+        "concat",
+        "uglify",
+        "string-replace",
+    ]);
     grunt.registerTask("serve", ["build", "connect"]);
 };

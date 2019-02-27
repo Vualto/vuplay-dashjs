@@ -1,5 +1,7 @@
 ﻿# vuplay dashjs
 
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
 ## Description
 
 This repo will demonstrate how to use [vudrm](http://vudrm.vualto.com/) with the [dash.js](https://github.com/Dash-Industry-Forum/dash.js/wiki).
@@ -25,7 +27,7 @@ This repo is currently targeted at [version 2.6.0](https://github.com/Dash-Indus
 5. Run `npm run serve:debug`, this will run the build task from the previous step and start a development node.js server. This server is not suitable for production.
     - You will need to add the host `dashjs.vuplay.local.drm.technology` to your local machine's hosts file in order for this to work.
 6. Load a supported browser and go to `https://dashjs.vuplay.local.drm.technology:14703`
-     
+
 NB: In order to allow DRM encrypted playback in chrome (https://goo.gl/EEhZqT), SSL has been enabled for the demo. You will get a warning about an invalid cert `NET::ERR_CERT_AUTHORITY_INVALID` but this can safely be ignored.
 
 ### Browser support
@@ -38,30 +40,30 @@ For a complete breakdown of supported media extensions please contact support@vu
 
 ### vudrm
 
-- [Contact vualto](http://www.vualto.com/contact-us/)
-- [vudrm](http://vudrm.vualto.com/)
-- [vudrm token documentation](https://docs.vualto.com/projects/vudrm/en/latest/VUDRM-token.html)
+-   [Contact vualto](https://www.vualto.com/contact-us/)
+-   [vudrm](https://vudrm.vualto.com/)
+-   [vudrm token documentation](https://docs.vualto.com/projects/vudrm/en/latest/VUDRM-token.html)
 
 ### mpeg-DASH
 
-- [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP)
-- [What is MPEG-DASH](http://www.streamingmedia.com/Articles/Editorial/What-Is-.../What-is-MPEG-DASH-79041.aspx)
+-   [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP)
+-   [What is MPEG-DASH](https://www.streamingmedia.com/Articles/Editorial/What-Is-.../What-is-MPEG-DASH-79041.aspx)
 
 ### Encrpyted media extensions
 
-- [Encrypted media extensions specification](https://www.w3.org/TR/2016/CR-encrypted-media-20160705/)
-- [Encrypted media extensions wikipedia](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions)
-- [Encrypted media extensions on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API)
-- [Intro to encrypted media extensions](https://www.html5rocks.com/en/tutorials/eme/basics/)
+-   [Encrypted media extensions specification](https://www.w3.org/TR/2016/CR-encrypted-media-20160705/)
+-   [Encrypted media extensions wikipedia](https://en.wikipedia.org/wiki/Encrypted_Media_Extensions)
+-   [Encrypted media extensions on MDN](https://developer.mozilla.org/en-US/docs/Web/API/Encrypted_Media_Extensions_API)
+-   [Intro to encrypted media extensions](https://www.html5rocks.com/en/tutorials/eme/basics/)
 
 ### dash.js
 
-- [dash if forum](http://dashif.org/)
-- [dash.js wiki](https://github.com/Dash-Industry-Forum/dash.js/wiki)
-- [dash.js](https://github.com/Dash-Industry-Forum/dash.js)
-- [dash.js releases](https://github.com/Dash-Industry-Forum/dash.js/releases)
+-   [dash if forum](https://dashif.org/)
+-   [dash.js wiki](https://github.com/Dash-Industry-Forum/dash.js/wiki)
+-   [dash.js](https://github.com/Dash-Industry-Forum/dash.js)
+-   [dash.js releases](https://github.com/Dash-Industry-Forum/dash.js/releases)
 
 ### Build tools
 
-- [npm](https://www.npmjs.com/)
-- [grunt](http://gruntjs.com/)
+-   [npm](https://www.npmjs.com/)
+-   [grunt](https://gruntjs.com/)
