@@ -1,40 +1,59 @@
 {
-  "name": "vuplay-dashjs",
-  "version": "1.0.0",
-  "description": "a demo repo on how to use vudrm with dashjs",
-  "main": "index.html",
-  "scripts": {
-    "build:debug": "grunt build --debug",
-    "serve:debug": "grunt serve --debug"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Vualto/vuplay-dashjs.git"
-  },
-  "keywords": [
-    "vuplay",
-    "vudrm",
-    "dash.js",
-    "dashjs",
-    "vualto",
-    "widevine",
-    "playready",
-    "mpedg-dash",
-    "dash"
-  ],
-  "author": "Robert Mitchell <robert.mitchell@vualto.com>",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Vualto/vuplay-dashjs/issues"
-  },
-  "homepage": "https://github.com/Vualto/vuplay-dashjs#readme",
-  "devDependencies": {
-    "grunt": "^1.0.3",
-    "grunt-contrib-clean": "^2.0.0",
-    "grunt-contrib-concat": "^1.0.1",
-    "grunt-contrib-connect": "^2.0.0",
-    "grunt-contrib-copy": "^1.0.0",
-    "grunt-contrib-uglify": "^4.0.0",
-    "grunt-string-replace": "^1.3.1"
-  }
+    "name": "vuplay-dashjs",
+    "version": "1.0.0",
+    "description": "a demo repo on how to use vudrm with dashjs",
+    "main": "index.html",
+    "scripts": {
+        "build:debug": "grunt build --debug",
+        "serve:debug": "grunt serve --debug",
+        "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,scss,md,html}\"",
+        "format:check": "prettier --list-different \"**/*.{ts,tsx,js,jsx,json,css,scss,md,html}\""
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Vualto/vuplay-dashjs.git"
+    },
+    "keywords": [
+        "vuplay",
+        "vudrm",
+        "dash.js",
+        "dashjs",
+        "vualto",
+        "widevine",
+        "playready",
+        "mpedg-dash",
+        "dash"
+    ],
+    "contributors": [
+        {
+            "name": "Mark Niland",
+            "email": "mark.niland@vualto.com",
+            "url": "https://github.com/maniland"
+        },
+        {
+            "name": "Lorenzo Koundouris",
+            "email": "lorenzo.koundouris@vualto.com",
+            "url": "https://github.com/lorenzo-vualto"
+        },
+        {
+            "name": "Stefano Nepa",
+            "email": "stefano.nepa@vualto.com",
+            "url": "https://github.com/stefanovualto"
+        }
+    ],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Vualto/vuplay-dashjs/issues"
+    },
+    "homepage": "https://github.com/Vualto/vuplay-dashjs#readme",
+    "devDependencies": {
+        "grunt": "^1.0.3",
+        "grunt-contrib-clean": "^2.0.0",
+        "grunt-contrib-concat": "^1.0.1",
+        "grunt-contrib-connect": "^2.0.0",
+        "grunt-contrib-copy": "^1.0.0",
+        "grunt-contrib-uglify": "^4.0.0",
+        "grunt-string-replace": "^1.3.1",
+        "prettier": "^1.16.4"
+    }
 }
