@@ -15,31 +15,30 @@ This repo is currently targeted at [version 2.6.0](https://github.com/Dash-Indus
 ### Install dependencies
 
 1. Install [npm](https://www.npmjs.com/)
-2. Clone the repo: `git clone git@github.com:Vualto/vuplay-dashjs.git`
-3. Navigate to the project's root folder: `cd vuplay-dashjs`
-4. Install the dependencies: `npm install`
+2. Install the [grunt-cli](https://www.npmjs.com/package/grunt-cli): `npm install -g grunt-cli`
+3. Clone the repository: `git clone git@github.com:Vualto/vuplay-dashjs.git`
+4. Navigate to the project's root folder: `cd vuplay-dashjs`
+5. Install the dependencies: `npm install`
 
 ### Build and run the dev environment
 
-1. Open the repo in your favourite javascript editor.
-2. In file `src/vuplay.js` replace `<your-stream-url>` with your stream url. This must be a [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) stream.
-3. In file `src/vuplay.js` replace `<your-vudrm-token>` with a vudrm token from [https://admin.drm.technology](https://admin.drm.technology)
-4. Run `npm run build:debug` in the project's root. This will create a `dist` folder that contains all the files need to run this demo.
-5. Run `npm run serve:debug`, this will run the build task from the previous step and start a development node.js server. This server is not suitable for production.
-    - You will need to add the host `dashjs.vuplay.local.drm.technology` to your local machine's hosts file in order for this to work.
-6. Load a supported browser and go to `https://dashjs.vuplay.local.drm.technology:14703`
+1. Open the repository in your favourite javascript editor.
+2. In file `src/vuplay-dashjs.js` replace `<your-stream-url>` with your stream url. This must be a [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) stream.
+3. In file `src/vuplay-dashjs.js` replace `<your-vudrm-token>` with a vudrm token from [https://admin.drm.technology](https://admin.drm.technology)
+4. Run `npm run build` in the project's root. This will create a `dist` folder that contains all the files needed to run this demo. N.B. You will need to add the host `dashjs.vuplay.co.uk` to your local machine's hosts file in order for this to work.
+5. Load a supported browser and go to `https://dashjs.vuplay.co.uk:14703`
 
-NB: In order to allow DRM encrypted playback in chrome (https://goo.gl/EEhZqT), SSL has been enabled for the demo. You will get a warning about an invalid cert `NET::ERR_CERT_AUTHORITY_INVALID` but this can safely be ignored.
+NB: In order to allow DRM encrypted playback in chrome (<https://goo.gl/EEhZqT>), SSL has been enabled for the demo. You will get a warning about an invalid cert `NET::ERR_CERT_AUTHORITY_INVALID` but this can safely be ignored.
 
 ### Browser support
 
 The browser must support [encrypted media extensions](https://www.w3.org/TR/2016/CR-encrypted-media-20160705/).
 Currently this includes the latest versions of Chrome, Firefox, Internet Explorer 11 and Edge.
-For a complete breakdown of supported media extensions please contact support@vualto.com
+For a complete breakdown of supported media extensions please contact <support@vualto.com>
 
 ## Useful links
 
-### vudrm
+### VuDRM
 
 -   [Contact vualto](https://www.vualto.com/contact-us/)
 -   [vudrm](https://vudrm.vualto.com/)
