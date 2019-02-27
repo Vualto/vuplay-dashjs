@@ -1,11 +1,11 @@
-﻿# vuplay dashjs
+﻿# VUPLAY dash.js
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-[![Built with Grunt](http://cdn.gruntjs.com/builtwith.svg)](http://gruntjs.com/)
+[![Built with Grunt](https://cdn.gruntjs.com/builtwith.svg)](https://gruntjs.com/)
 
 ## Description
 
-This repo will demonstrate how to use [vudrm](http://vudrm.vualto.com/) with the [dash.js](https://github.com/Dash-Industry-Forum/dash.js/wiki).
+This repo will demonstrate how to use [vudrm](https://vudrm.vualto.com/) with the [dash.js](https://github.com/Dash-Industry-Forum/dash.js/wiki).
 If you have any questions please contact support@vualto.com
 
 This repo is currently targeted at [version 2.6.0](https://github.com/Dash-Industry-Forum/dash.js/releases/tag/v2.6.0) of dash.js.

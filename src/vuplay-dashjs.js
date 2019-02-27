@@ -5,7 +5,7 @@
     // Please login to https://admin.drm.technology to generate a vudrm token.
     var vudrmToken = "<your-vudrm-token>";
 
-    // Override two DashJS methods so that we can set the Widevine license request body.
+    // Override two dash.js methods so that we can set the Widevine license request body.
     var overrideKeySystemWidevine = function() {
         return {
             getInitData: function(cpData, kid) {
@@ -68,7 +68,7 @@
         };
     };
 
-    // Initialize DashJS.
+    // Initialize dash.js.
     var player = dashjs.MediaPlayer().create();
     player.extend("KeySystemWidevine", overrideKeySystemWidevine, true);
     player.extend(
@@ -91,7 +91,7 @@
     // For Widevine set the LaURL and the VuDRM token.
     var widevineLaUrl = "https://widevine-proxy.drm.technology/proxy";
 
-    // Set the protection data. DashJS only supports PlayReady and Widevine but Vualto do support!
+    // Set the protection data. dash.js only supports PlayReady and Widevine but Vualto do support!
     player.setProtectionData({
         "com.widevine.alpha": {
             serverURL: widevineLaUrl,

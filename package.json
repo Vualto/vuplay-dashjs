@@ -1,7 +1,7 @@
 {
     "name": "vuplay-dashjs",
     "version": "1.0.0",
-    "description": "A basic implementation of the DashJS player with the option to integrate VuDRM",
+    "description": "A basic implementation of the dash.js player with the option to integrate VuDRM",
     "main": "vuplay-dashjs.js",
     "scripts": {
         "build": "grunt build && grunt serve",
