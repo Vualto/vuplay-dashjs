@@ -8,7 +8,7 @@ module.exports = function(grunt) {
 
         concat: {
             options: {
-                banner: "// <%= pkg.description %>",
+                banner: "// <%= pkg.description %> \n",
             },
             dist: {
                 src: [
