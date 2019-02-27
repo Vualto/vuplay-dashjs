@@ -1,7 +1,7 @@
 module.exports = function (grunt) {
     var dashjsUrls = {
-        min: "https://cdnjs.cloudflare.com/ajax/libs/dashjs/2.4.0/dash.all.min.js",
-        debug: "https://cdnjs.cloudflare.com/ajax/libs/dashjs/2.4.0/dash.all.debug.js"
+        min: "https://cdn.dashjs.org/latest/dash.all.min.js",
+        debug: "https://cdn.dashjs.org/latest/dash.all.debug.js"
     };
 
     var vuplayUrls = {
@@ -67,7 +67,7 @@ module.exports = function (grunt) {
         connect: {
             server: {
                 options: {
-                    protocol: "http",
+                    protocol: "https",
                     hostname: "dashjs.vuplay.local.drm.technology",
                     port: 14703,
                     base: "dist",
