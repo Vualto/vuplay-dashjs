@@ -5,7 +5,7 @@
 
 ## Description
 
-This repository will demonstrate how to use [vudrm](https://vudrm.vualto.com/) with the [dash.js](https://github.com/Dash-Industry-Forum/dash.js/wiki).
+This repository will demonstrate how to use [VuDRM](https://vudrm.vualto.com/) with the [dash.js](https://github.com/Dash-Industry-Forum/dash.js/wiki).
 If you have any questions please contact support@vualto.com
 
 This repository is currently targeted at [version 2.6.0](https://github.com/Dash-Industry-Forum/dash.js/releases/tag/v2.6.0) of dash.js.
@@ -24,7 +24,7 @@ This repository is currently targeted at [version 2.6.0](https://github.com/Dash
 
 1. Open the repository in your favourite javascript editor.
 2. In file `src/vuplay-dashjs.js` replace `<your-stream-url>` with your stream URL. This must be a [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) stream.
-3. In file `src/vuplay-dashjs.js` replace `<your-vudrm-token>` with a vudrm token from [https://admin.drm.technology](https://admin.drm.technology)
+3. In file `src/vuplay-dashjs.js` replace `<your-vudrm-token>` with a VuDRM token from [https://admin.drm.technology](https://admin.drm.technology)
 4. Run `npm run build` in the project's root. This will create a `dist` folder that contains all the files needed to run this demo. N.B. You will need to add the host `dashjs.vuplay.co.uk` to your local machine's hosts file in order for this to work.
 5. Load a supported browser and go to `https://dashjs.vuplay.co.uk:14703`
 

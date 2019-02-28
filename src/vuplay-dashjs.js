@@ -2,7 +2,7 @@
     var container = document.querySelector("#vuplay-container");
     // Set your mpeg-DASH URL here.
     var streamURL = "<your-stream-url>";
-    // Please login to https://admin.drm.technology to generate a vudrm token.
+    // Please login to https://admin.drm.technology to generate a VuDRM token.
     var vudrmToken = "<your-vudrm-token>";
 
     // Override two dash.js methods so that we can set the Widevine license request body.
