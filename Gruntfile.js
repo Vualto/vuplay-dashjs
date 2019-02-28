@@ -1,69 +1,44 @@
 module.exports = function(grunt) {
-    var dashjsUrls = {
-        min: "https://cdn.dashjs.org/latest/dash.all.min.js",
-        debug: "https://cdn.dashjs.org/latest/dash.all.debug.js",
-    };
-
-    var vuplayUrls = {
-        min: "vuplay.min.js",
-        debug: "vuplay.js",
-    };
-
     grunt.initConfig({
         dist: "dist",
-        package: grunt.file.readJSON("package.json"),
+
+        pkg: grunt.file.readJSON("package.json"),
 
         clean: ["<%= dist %>/*"],
-        copy: {
-            all: {
-                expand: true,
-                src: ["index.html", "poster.png"],
-                dest: "<%= dist %>/",
-                flatten: true,
-            },
-        },
+
         concat: {
-            options: {},
+            options: {
+                banner: "// <%= pkg.description %> \n",
+            },
             dist: {
                 src: [
                     "externs/BASE64.js",
                     "src/OverrideKeySystemWidevine.js",
                     "src/OverrideProtectionKeyController.js",
-                    "src/vuplay.js",
+                    "src/<%= pkg.name %>.js",
                 ],
-                dest: "dist/vuplay.js",
+                dest: "dist/<%= pkg.name %>.js",
             },
         },
-        uglify: {
-            js: {
-                files: {
-                    "dist/vuplay.min.js": ["dist/vuplay.js"],
-                },
+
+        copy: {
+            all: {
+                expand: true,
+                src: ["index.html", "assets/vuplay_poster.png"],
+                dest: "<%= dist %>/",
+                flatten: true,
             },
         },
-        "string-replace": {
-            dist: {
-                files: [
-                    {
-                        src: "dist/index.html",
-                        dest: "dist/index.html",
-                    },
-                ],
+
+        watch: {
+            options: {
+                livereload: true,
+            },
+            scripts: {
+                files: ["**/*.js", "./index.html"],
+                tasks: ["build"],
                 options: {
-                    replacements: [
-                        {
-                            pattern: "{dashjs}",
-                            replacement: grunt.option("debug")
-                                ? dashjsUrls.debug
-                                : dashjsUrls.min,
-                        },
-                        {
-                            pattern: "{vuplayjs}",
-                            replacement: grunt.option("debug")
-                                ? vuplayUrls.debug
-                                : vuplayUrls.min,
-                        },
-                    ],
+                    spawn: false,
                 },
             },
         },
@@ -72,28 +47,30 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     protocol: "https",
-                    hostname: "dashjs.vuplay.local.drm.technology",
+                    hostname: "dashjs.local.vuplay.co.uk",
                     port: 14703,
                     base: "dist",
                     keepalive: true,
                 },
             },
         },
+        concurrent: {
+            connectandwatch: {
+                tasks: ["connect", "watch"],
+                options: {
+                    logConcurrentOutput: true,
+                },
+            },
+        },
     });
 
     grunt.loadNpmTasks("grunt-contrib-clean");
-    grunt.loadNpmTasks("grunt-contrib-copy");
     grunt.loadNpmTasks("grunt-contrib-concat");
-    grunt.loadNpmTasks("grunt-contrib-uglify");
-    grunt.loadNpmTasks("grunt-string-replace");
+    grunt.loadNpmTasks("grunt-contrib-copy");
+    grunt.loadNpmTasks("grunt-contrib-watch");
     grunt.loadNpmTasks("grunt-contrib-connect");
+    grunt.loadNpmTasks("grunt-concurrent");
 
-    grunt.registerTask("build", [
-        "clean",
-        "copy",
-        "concat",
-        "uglify",
-        "string-replace",
-    ]);
-    grunt.registerTask("serve", ["build", "connect"]);
+    grunt.registerTask("build", ["clean", "concat", "copy"]);
+    grunt.registerTask("serve", ["build", "concurrent:connectandwatch"]);
 };

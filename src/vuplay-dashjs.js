@@ -1,11 +1,11 @@
 (function() {
-    // Set your mpeg-DASH url here.
-    var url = "<your-stream-url>";
-
-    // Please login to https://admin.drm.technology to generate a vudrm token.
+    var container = document.querySelector("#vuplay-container");
+    // Set your mpeg-DASH URL here.
+    var streamURL = "<your-stream-url>";
+    // Please login to https://admin.drm.technology to generate a VUDRM token.
     var vudrmToken = "<your-vudrm-token>";
 
-    // Override two dash.js methods so that we can set the widevine license request body.
+    // Override two dash.js methods so that we can set the Widevine license request body.
     var overrideKeySystemWidevine = function() {
         return {
             getInitData: function(cpData, kid) {
@@ -68,7 +68,7 @@
         };
     };
 
-    // Initialize dashjs.
+    // Initialize dash.js.
     var player = dashjs.MediaPlayer().create();
     player.extend("KeySystemWidevine", overrideKeySystemWidevine, true);
     player.extend(
@@ -81,17 +81,17 @@
     player.attachTTMLRenderingDiv(
         document.querySelector("#ttml-rendering-div"),
     );
-    player.attachVideoContainer(document.querySelector("#vuplay-container"));
+    player.attachVideoContainer(container);
     player.setAutoPlay(true);
 
-    // For PlayReady the vudrm token is attached as a querystring parameter on the license server url.
+    // For PlayReady the VUDRM token is attached as a querystring parameter on the license server URL.
     var playReadyLaUrl =
         "https://playready-license.drm.technology/rightsmanager.asmx?token=" +
         encodeURIComponent(vudrmToken);
-    // For widevine set the LaUrl and the vudrm token.
+    // For Widevine set the LaURL and the VUDRM token.
     var widevineLaUrl = "https://widevine-proxy.drm.technology/proxy";
 
-    // Set the protection data. dashjs only supports PlayReady and Widevine but Vualto do support!
+    // Set the protection data. dash.js only supports PlayReady and Widevine but Vualto do support!
     player.setProtectionData({
         "com.widevine.alpha": {
             serverURL: widevineLaUrl,
@@ -104,5 +104,5 @@
     });
 
     // Set the player's source.
-    player.attachSource(url);
+    player.attachSource(streamURL);
 })();
