@@ -2,7 +2,7 @@
     var container = document.querySelector("#vuplay-container");
     // Set your mpeg-DASH URL here.
     var streamURL = "<your-stream-url>";
-    // Please login to https://admin.drm.technology to generate a VuDRM token.
+    // Please login to https://admin.drm.technology to generate a VUDRM token.
     var vudrmToken = "<your-vudrm-token>";
 
     // Override two dash.js methods so that we can set the Widevine license request body.
@@ -84,11 +84,11 @@
     player.attachVideoContainer(container);
     player.setAutoPlay(true);
 
-    // For PlayReady the VuDRM token is attached as a querystring parameter on the license server URL.
+    // For PlayReady the VUDRM token is attached as a querystring parameter on the license server URL.
     var playReadyLaUrl =
         "https://playready-license.drm.technology/rightsmanager.asmx?token=" +
         encodeURIComponent(vudrmToken);
-    // For Widevine set the LaURL and the VuDRM token.
+    // For Widevine set the LaURL and the VUDRM token.
     var widevineLaUrl = "https://widevine-proxy.drm.technology/proxy";
 
     // Set the protection data. dash.js only supports PlayReady and Widevine but Vualto do support!
