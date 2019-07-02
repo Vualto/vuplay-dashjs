@@ -1,14 +1,13 @@
-(function() {
-    var container = document.querySelector("#vuplay-container");
+(function () {
     // Set your mpeg-DASH URL here.
     var streamURL = "<your-stream-url>";
     // Please login to https://admin.drm.technology to generate a VUDRM token.
     var vudrmToken = "<your-vudrm-token>";
 
     // Override two dash.js methods so that we can set the Widevine license request body.
-    var overrideKeySystemWidevine = function() {
+    var overrideKeySystemWidevine = function () {
         return {
-            getInitData: function(cpData, kid) {
+            getInitData: function (cpData, kid) {
                 this.kid = kid;
                 if ("pssh" in cpData) {
                     return BASE64.decodeArray(cpData.pssh.__text).buffer;
@@ -16,7 +15,7 @@
                 return null;
             },
 
-            getLicenseRequestFromMessage: function(message) {
+            getLicenseRequestFromMessage: function (message) {
                 var body = {
                     token: vudrmToken,
                     drm_info: Array.apply(null, new Uint8Array(message)),
@@ -28,15 +27,16 @@
         };
     };
 
-    var overrideProtectionKeyController = function() {
+    var overrideProtectionKeyController = function () {
         var parent = this.parent;
 
         return {
-            getSupportedKeySystemsFromContentProtection: function(cps) {
+            getSupportedKeySystemsFromContentProtection: function (cps) {
+                if (typeof cps === "undefined" || cps === null) return;
                 var cp, ks, ksIdx, cpIdx;
                 var supportedKS = [];
                 var keySystems = parent.getKeySystems();
-                var cpsWithKeyId = cps.find(function(element) {
+                var cpsWithKeyId = cps.find(function (element) {
                     return element.KID !== null;
                 });
 
@@ -76,13 +76,10 @@
         overrideProtectionKeyController,
         true,
     );
-    player.initialize();
-    player.attachView(document.querySelector("#vuplay-video"));
+    player.initialize(document.querySelector("#vuplay-video"), streamURL, true);
     player.attachTTMLRenderingDiv(
         document.querySelector("#ttml-rendering-div"),
     );
-    player.attachVideoContainer(container);
-    player.setAutoPlay(true);
 
     // For PlayReady the VUDRM token is attached as a querystring parameter on the license server URL.
     var playReadyLaUrl =
@@ -102,7 +99,4 @@
             httpRequestHeaders: {},
         },
     });
-
-    // Set the player's source.
-    player.attachSource(streamURL);
 })();
