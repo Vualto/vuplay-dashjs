@@ -11,12 +11,7 @@ module.exports = function(grunt) {
                 banner: "// <%= pkg.description %> \n",
             },
             dist: {
-                src: [
-                    "externs/BASE64.js",
-                    "src/OverrideKeySystemWidevine.js",
-                    "src/OverrideProtectionKeyController.js",
-                    "src/<%= pkg.name %>.js",
-                ],
+                src: ["src/<%= pkg.name %>.js"],
                 dest: "dist/<%= pkg.name %>.js",
             },
         },
@@ -47,7 +42,7 @@ module.exports = function(grunt) {
             server: {
                 options: {
                     protocol: "https",
-                    hostname: "dashjs.local.vuplay.co.uk",
+                    hostname: "localhost",
                     port: 14703,
                     base: "dist",
                     keepalive: true,

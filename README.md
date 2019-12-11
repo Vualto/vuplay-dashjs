@@ -15,18 +15,17 @@ This repository is currently targeted at [version 3.0.0](https://github.com/Dash
 ### Install dependencies
 
 1. Install [npm](https://www.npmjs.com/)
-2. Install the [grunt-cli](https://www.npmjs.com/package/grunt-cli): `npm install -g grunt-cli`
-3. Clone the repository: `git clone git@github.com:Vualto/vuplay-dashjs.git`
-4. Navigate to the project's root folder: `cd vuplay-dashjs`
-5. Install the dependencies: `npm install`
+2. Clone the repository: `git clone git@github.com:Vualto/vuplay-dashjs.git`
+3. Navigate to the project's root folder: `cd vuplay-dashjs`
+4. Install the dependencies: `npm install`
 
 ### Build and run the dev environment
 
 1. Open the repository in your favourite javascript editor.
 2. In file `src/vuplay-dashjs.js` replace `<your-stream-url>` with your stream URL. This must be a [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) stream.
 3. In file `src/vuplay-dashjs.js` replace `<your-vudrm-token>` with a VUDRM token from [https://admin.drm.technology](https://admin.drm.technology)
-4. Run `npm run build` in the project's root. This will create a `dist` folder that contains all the files needed to run this demo. N.B. You will need to add the host `dashjs.vuplay.co.uk` to your local machine's hosts file in order for this to work.
-5. Load a supported browser and go to `https://dashjs.vuplay.co.uk:14703`
+4. Run `npm run build` in the project's root. This will create a `dist` folder that contains all the files needed to run this demo.
+5. Load a supported browser and go to `https://localhost:14703`
 
 NB: In order to allow DRM encrypted playback in chrome (<https://goo.gl/EEhZqT>), SSL has been enabled for the demo. You will get a warning about an invalid cert `NET::ERR_CERT_AUTHORITY_INVALID` but this can safely be ignored.
 

@@ -8,7 +8,7 @@
         <meta name="author" content="Vualto" />
         <style>
             #vuplay-video {
-                width: 50%;
+                width: 100%;
             }
         </style>
     </head>
@@ -17,7 +17,8 @@
             <video
                 id="vuplay-video"
                 poster="vuplay_poster.png"
-                controls="controls"
+                controls
+                muted
             ></video>
             <div id="ttml-rendering-div"></div>
         </div>
@@ -26,5 +27,65 @@
             src="https://cdn.dashjs.org/latest/dash.all.min.js"
         ></script>
         <script type="text/javascript" src="vuplay-dashjs.js"></script>
+        <script>
+            (function() {
+                // Set your mpeg-DASH URL here.
+                const streamURL =
+                    "https://pocfrancetv.akamaized.net/test-drm/7aefd88727ad5/drmtest.ism/manifest.mpd";
+                // Please login to https://admin.drm.technology to generate a VUDRM token.
+                const vudrmToken =
+                    "france-tv-staging|2019-12-11T15:05:19Z|6pkB9JJxqcslZ+ij222SmA==|f2ce5acc250828658d56a31741124ef9e69c6369";
+
+                //     const streamURL =
+                //     "https://pocfrancetv.akamaized.net/test-drm/7aefd88727ad5/drmtest.ism/manifest.mpd";
+                // // Please login to https://admin.drm.technology to generate a VUDRM token.
+                // const vudrmToken =
+                //     "france-tv|2019-12-11T15:01:33Z|Zjeg/rmmt/dchgEVbXlphw==|005812b05c73a3ee4c5c6a636cbcfa04f7b7742f";
+
+                // For PlayReady the VUDRM token is attached as a querystring parameter on the license server URL.
+                // For Widevine set the LaURL and the VUDRM token.
+                const playReadyLaUrl = `https://playready-license.drm.technology/rightsmanager.asmx?token=${encodeURIComponent(
+                    vudrmToken,
+                )}`;
+                // For Widevine set the LaURL and the VUDRM token.
+                const widevineLaUrl =
+                    "https://widevine-proxy.drm.technology/proxy";
+
+                // Initialize dash.js.
+                const player = dashjs.MediaPlayer().create();
+
+                player.extend(
+                    "KeySystemWidevine",
+                    VUDRMKeySystemWidevine(vudrmToken),
+                    true,
+                );
+                player.extend(
+                    "ProtectionKeyController",
+                    VUDRMProtectionKeyController,
+                    true,
+                );
+
+                player.initialize(
+                    document.querySelector("#vuplay-video"),
+                    streamURL,
+                    true,
+                );
+                player.attachTTMLRenderingDiv(
+                    document.querySelector("#ttml-rendering-div"),
+                );
+
+                // Set the protection data. dash.js only supports PlayReady and Widevine but Vualto do support!
+                player.setProtectionData({
+                    "com.widevine.alpha": {
+                        serverURL: widevineLaUrl,
+                        httpRequestHeaders: {},
+                    },
+                    "com.microsoft.playready": {
+                        serverURL: playReadyLaUrl,
+                        httpRequestHeaders: {},
+                    },
+                });
+            })();
+        </script>
     </body>
 </html>
