@@ -22,8 +22,8 @@ This repository is currently targeted at [version 3.0.0](https://github.com/Dash
 ### Build and run the dev environment
 
 1. Open the repository in your favourite javascript editor.
-2. In file `src/vuplay-dashjs.js` replace `<your-stream-url>` with your stream URL. This must be a [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) stream.
-3. In file `src/vuplay-dashjs.js` replace `<your-vudrm-token>` with a VUDRM token from [https://admin.drm.technology](https://admin.drm.technology)
+2. In file `index.html` replace `<your-dash-stream-url>` with your stream URL. This must be a [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) stream.
+3. In file `index.html` replace `<your-vudrm-token>` with a VUDRM token from [https://admin.drm.technology](https://admin.drm.technology)
 4. Run `npm run build` in the project's root. This will create a `dist` folder that contains all the files needed to run this demo.
 5. Load a supported browser and go to `https://localhost:14703`
 
