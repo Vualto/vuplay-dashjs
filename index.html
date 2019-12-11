@@ -34,12 +34,6 @@
                 // Please login to https://admin.drm.technology to generate a VUDRM token.
                 const vudrmToken = "<your-vudrm-token>";
 
-                //     const streamURL =
-                //     "https://pocfrancetv.akamaized.net/test-drm/7aefd88727ad5/drmtest.ism/manifest.mpd";
-                // // Please login to https://admin.drm.technology to generate a VUDRM token.
-                // const vudrmToken =
-                //     "france-tv|2019-12-11T15:01:33Z|Zjeg/rmmt/dchgEVbXlphw==|005812b05c73a3ee4c5c6a636cbcfa04f7b7742f";
-
                 // For PlayReady the VUDRM token is attached as a querystring parameter on the license server URL.
                 // For Widevine set the LaURL and the VUDRM token.
                 const playReadyLaUrl = `https://playready-license.drm.technology/rightsmanager.asmx?token=${encodeURIComponent(
