@@ -5,7 +5,7 @@ function VUDRMKeySystemWidevine(token) {
         return {
             getLicenseRequestFromMessage(message) {
                 const body = {
-                    token,
+                    token: token,
                     drm_info: Array.apply(null, new Uint8Array(message)),
                     kid: this.kid,
                 };
@@ -30,13 +30,16 @@ function VUDRMProtectionKeyController() {
         getSupportedKeySystemsFromContentProtection: function(
             contentProtections,
         ) {
-            if (!contentProtections) return [];
+            if (!contentProtections) {
+                return [];
+            }
+
             const contentProtection = contentProtections.find(function(cp) {
                 return cp.KID !== null;
             });
 
             if (!contentProtection) {
-                throw new Error("No kid available");
+                return [];
             }
 
             const KID = contentProtection.KID;
