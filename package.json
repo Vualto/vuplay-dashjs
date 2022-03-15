@@ -1,8 +1,8 @@
 {
-    "name": "vuplay-dashjs",
+    "name": "studiodrm-dashjs",
     "version": "1.0.0",
-    "description": "A basic implementation of the dash.js player with the option to integrate VUDRM",
-    "main": "vuplay-dashjs.js",
+    "description": "A basic implementation of the dash.js player with the option to integrate Studio DRM",
+    "main": "studiodrm-dashjs.js",
     "scripts": {
         "build": "grunt build && grunt serve",
         "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,json,css,scss,md,html}\"",
@@ -13,9 +13,8 @@
         "url": "git+https://github.com/Vualto/vuplay-dashjs.git"
     },
     "keywords": [
-        "vualto",
-        "vuplay",
-        "vudrm",
+        "jwplayer",
+        "studiodrm",
         "dashjs",
         "mpeg-dash",
         "dash",
@@ -24,19 +23,16 @@
     ],
     "contributors": [
         {
-            "name": "Mark Niland",
-            "email": "mark.niland@vualto.com",
-            "url": "https://github.com/maniland"
+            "name": "Rob Mitchell",
+            "email": "rmitchell@jwplayer.com"
         },
         {
-            "name": "Lorenzo Koundouris",
-            "email": "lorenzo.koundouris@vualto.com",
-            "url": "https://github.com/lorenzo-vualto"
+            "name": "Sam Perriton-Branch",
+            "email": "sperriton-branch@jwplayer.com"
         },
         {
-            "name": "Stefano Nepa",
-            "email": "stefano.nepa@vualto.com",
-            "url": "https://github.com/stefanovualto"
+            "name": "Ben Godby",
+            "email": "bgodby@jwplayer.com"
         }
     ],
     "license": "MIT",
