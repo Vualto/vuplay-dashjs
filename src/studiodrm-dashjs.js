@@ -77,7 +77,7 @@
         overrideProtectionKeyController,
         true,
     );
-    player.initialize(document.querySelector("#vuplay-video"), streamURL, true);
+    player.initialize(document.querySelector("#studiodrm-video"), streamURL, true);
     player.attachTTMLRenderingDiv(
         document.querySelector("#ttml-rendering-div"),
     );
