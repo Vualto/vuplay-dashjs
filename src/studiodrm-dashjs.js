@@ -88,8 +88,8 @@
     // For Widevine set the LaURL and the VUDRM token.
     var widevineLaUrl = "https://widevine-proxy.drm.technology/proxy";
 
-    // TODO: Change lines 97, 103 with the new header name... X-STUDIODRM-TOKEN?
-    // Set the protection data. dash.js only supports PlayReady and Widevine but JW Player do support!
+    // TODO: Change lines 97, 103 with the new header name... X-STUDIODRM-TOKEN? https://jwplayer.atlassian.net/browse/CP-25
+    // Set the protection data. dash.js only supports PlayReady and Widevine.
     player.setProtectionData({
         "com.widevine.alpha": {
             serverURL: widevineLaUrl,

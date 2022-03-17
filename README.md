@@ -5,7 +5,7 @@
 
 ## Description
 
-#### TODO: Change the below to the JW Studio DRM docs
+#### TODO: Change the below to the JW Studio DRM docs - https://jwplayer.atlassian.net/browse/CP-25
 This repository will demonstrate how to use [Studio DRM](https://jw-studio-drm-docs) with [dash.js](https://github.com/Dash-Industry-Forum/dash.js/wiki).
 If you have any questions please contact <support@jwplayer.com>
 
@@ -17,7 +17,7 @@ This repository is currently targeted at [version 4.3.0](https://github.com/Dash
 
 1. Install [npm](https://www.npmjs.com/)
 2. Install the [grunt-cli](https://www.npmjs.com/package/grunt-cli): `npm install -g grunt-cli`
-#### TODO: Change the below (no.3) to the JW GitHub repo structure name
+#### TODO: Change the below (no.3) to the JW GitHub repo structure name - https://jwplayer.atlassian.net/browse/CP-25
 3. Clone the repository: `git clone git@github.com:Vualto/vuplay-dashjs.git`
 4. Navigate to the project's root folder: `cd studiodrm-dashjs`
 5. Install the dependencies: `npm install`
@@ -26,7 +26,7 @@ This repository is currently targeted at [version 4.3.0](https://github.com/Dash
 
 1. Open the repository in your favourite javascript editor.
 2. In file `src/studiodrm-dashjs.js` replace `<your-stream-url>` with your stream URL. This must be a [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) stream.
-#### TODO: Change the below to the JW Studio DRM docs
+#### TODO: Change the below to the JW Studio DRM docs - https://jwplayer.atlassian.net/browse/CP-25
 3. In file `src/studiodrm-dashjs.js` replace `<your-studiodrm-token>` with a Studio DRM token from [https://jw-studio-drm-token-docs](studiodrm-token-docs)
 4. Run `npm run build` in the project's root. This will create a `dist` folder that contains all the files needed to run this demo. N.B. You will need to add the host `dashjs.studiodrm.local` to your local machine's hosts file in order for this to work.
 5. Load a supported browser and go to `https://dashjs.studiodrm.local:14703`
@@ -44,7 +44,7 @@ For a complete breakdown of supported media extensions please contact <support@j
 ### Studio DRM
 
 -   [Contact JW Player](https://support.jwplayer.com/)
-#### TODO: Change the below to the JW Studio DRM docs
+#### TODO: Change the below to the JW Studio DRM docs - https://jwplayer.atlassian.net/browse/CP-25
 -   [Studio DRM](https://jw-studio-drm-docs)
 -   [Studio DRM token documentation](https://jw-studio-drm-token-docs)
 
