@@ -24,7 +24,6 @@ This repository is currently targeted at [version 4.3.0](https://github.com/Dash
 
 1. Open the repository in your favourite javascript editor.
 2. In file `src/studiodrm-dashjs.js` replace `<your-stream-url>` with your stream URL. This must be a [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) stream.
-#### TODO: Change the below to the JW Studio DRM docs - https://jwplayer.atlassian.net/browse/CP-25
 3. In file `src/studiodrm-dashjs.js` replace `<your-studiodrm-token>` with a Studio DRM token. Details can be found in the [Studio DRM Token v2 documentation](https://developer.jwplayer.com/jwplayer/docs/studio-drm-token-v2)
 4. Run `npm run build` in the project's root. This will create a `dist` folder that contains all the files needed to run this demo. N.B. You will need to add the host `dashjs.studiodrm.local` to your local machine's hosts file in order for this to work.
 5. Load a supported browser and go to `https://dashjs.studiodrm.local:14703`
