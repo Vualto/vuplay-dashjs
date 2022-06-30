@@ -24,7 +24,7 @@ This repository is currently targeted at [version 4.3.0](https://github.com/Dash
 
 1. Open the repository in your favourite javascript editor.
 2. In file `src/studiodrm-dashjs.js` replace `<your-stream-url>` with your stream URL. This must be a [MPEG-DASH](https://en.wikipedia.org/wiki/Dynamic_Adaptive_Streaming_over_HTTP) stream.
-3. In file `src/studiodrm-dashjs.js` replace `<your-studiodrm-token>` with a Studio DRM token. Details can be found in the [Studio DRM Token v2 documentation](https://developer.jwplayer.com/jwplayer/docs/studio-drm-token-v2)
+3. In file `src/studiodrm-dashjs.js` replace `<your-studiodrm-token>` with a Studio DRM token. Details can be found in the [Studio DRM Token v2 documentation](https://developer.jwplayer.com/jwplayer/docs/studio-drm-token-api-v2)
 4. Run `npm run build` in the project's root. This will create a `dist` folder that contains all the files needed to run this demo. N.B. You will need to add the host `dashjs.studiodrm.local` to your local machine's hosts file in order for this to work.
 5. Load a supported browser and go to `https://dashjs.studiodrm.local:14703`
 
@@ -42,7 +42,8 @@ For a complete breakdown of supported media extensions please contact <support@j
 
 -   [Contact JW Player](https://support.jwplayer.com/)
 -   [Studio DRM](https://developer.jwplayer.com/jwplayer/docs/studio-drm-standalone-getting-started)
--   [Studio DRM token documentation](https://developer.jwplayer.com/jwplayer/docs/studio-drm-token-v2)
+-   [Studio DRM token documentation](https://developer.jwplayer.com/jwplayer/docs/studio-drm-token-api-v2)
+-   [JW Player documentation on the configuration of DRM with dash.js](https://developer.jwplayer.com/jwplayer/docs/studio-drm-standalone-web-players#dashjs)
 
 ### mpeg-DASH
 
