@@ -1,8 +1,8 @@
 (function () {
     // Set your mpeg-DASH URL here.
     var streamURL = "<your-stream-url>";
-    // Please login to https://admin.drm.technology to generate a VUDRM token.
-    var vudrmToken = "<your-vudrm-token>";
+    // Please refer to the following documentation for guidance on generating a Studio DRM token: https://developer.jwplayer.com/jwplayer/docs/studio-drm-token-api-v2
+    var studioDrmToken = "<your-studiodrm-token>";
 
     // Override two dash.js methods so that we can set the Widevine license request body.
     var overrideKeySystemWidevine = function () {
@@ -17,7 +17,7 @@
 
             getLicenseRequestFromMessage: function (message) {
                 var body = {
-                    token: vudrmToken,
+                    token: studioDrmToken,
                     drm_info: Array.apply(null, new Uint8Array(message)),
                     kid: this.kid,
                 };
@@ -76,27 +76,30 @@
         overrideProtectionKeyController,
         true,
     );
-    player.initialize(document.querySelector("#vuplay-video"), streamURL, true);
+    player.initialize(document.querySelector("#studiodrm-video"), streamURL, true);
     player.attachTTMLRenderingDiv(
         document.querySelector("#ttml-rendering-div"),
     );
 
-    // For PlayReady the VUDRM token is attached as a querystring parameter on the license server URL.
+    // For PlayReady the Studio DRM token is attached as a querystring parameter on the license server URL.
     var playReadyLaUrl =
-        "https://playready-license.drm.technology/rightsmanager.asmx?token=" +
-        encodeURIComponent(vudrmToken);
-    // For Widevine set the LaURL and the VUDRM token.
-    var widevineLaUrl = "https://widevine-proxy.drm.technology/proxy";
+        "https://playready-license.vudrm.tech/rightsmanager.asmx";
+    // For Widevine set the LaURL and the Studio DRM token.
+    var widevineLaUrl = "https://widevine-proxy.vudrm.tech/proxy";
 
-    // Set the protection data. dash.js only supports PlayReady and Widevine but Vualto do support!
+    // Set the protection data. dash.js only supports PlayReady and Widevine.
     player.setProtectionData({
         "com.widevine.alpha": {
             serverURL: widevineLaUrl,
-            httpRequestHeaders: {},
+            httpRequestHeaders: {
+                "X-VUDRM-TOKEN": studioDrmToken
+            },
         },
         "com.microsoft.playready": {
             serverURL: playReadyLaUrl,
-            httpRequestHeaders: {},
+            httpRequestHeaders: {
+                "X-VUDRM-TOKEN": studioDrmToken
+            },
         },
     });
 })();
