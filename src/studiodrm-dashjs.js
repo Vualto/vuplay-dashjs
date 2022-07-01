@@ -1,7 +1,7 @@
 (function () {
     // Set your mpeg-DASH URL here.
     var streamURL = "<your-stream-url>";
-    // Please refer to the following documentation for guidance on generating a Studio DRM token: https://developer.jwplayer.com/jwplayer/docs/studio-drm-token-v2
+    // Please refer to the following documentation for guidance on generating a Studio DRM token: https://developer.jwplayer.com/jwplayer/docs/studio-drm-token-api-v2
     var studioDrmToken = "<your-studiodrm-token>";
 
     // Override two dash.js methods so that we can set the Widevine license request body.
@@ -83,9 +83,9 @@
 
     // For PlayReady the Studio DRM token is attached as a querystring parameter on the license server URL.
     var playReadyLaUrl =
-        "https://playready-license.drm.technology/rightsmanager.asmx";
+        "https://playready-license.vudrm.tech/rightsmanager.asmx";
     // For Widevine set the LaURL and the Studio DRM token.
-    var widevineLaUrl = "https://widevine-proxy.drm.technology/proxy";
+    var widevineLaUrl = "https://widevine-proxy.vudrm.tech/proxy";
 
     // Set the protection data. dash.js only supports PlayReady and Widevine.
     player.setProtectionData({
